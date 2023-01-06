@@ -6,6 +6,7 @@ const cors = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Methods': 'GET,HEAD,OPTIONS',
   'Access-Control-Max-Age': '86400',
+  'Access-Control-Allow-Headers': 'content-type'
 }
 
 async function handleRequest(request) {
