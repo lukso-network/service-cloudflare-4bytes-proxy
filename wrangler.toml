@@ -1,0 +1,12 @@
+name = "dawn-band-b9c5"
+main = "src/index.ts"
+compatibility_date = "2023-01-06"
+usage_model = "bundled"
+env = { }
+
+[triggers]
+crons = [ ]
+
+[[kv_namespaces]]
+id = "20eb836d59744dd995ce4686e4b8f001"
+binding = "NAMESPACE"
