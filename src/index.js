@@ -4,8 +4,9 @@ addEventListener('fetch', event => {
 
 async function handleRequest(request) {
   const url = new URL(request.url)
+  console.log(request.url)
   const signature =
-    (url.searchParams && url.searchParams.hex_signature) ||
+    (url.searchParams && url.searchParams.get('hex_signature')) ||
     (url.pathname && url.pathname.substring(1))
   if (!signature) {
     return new Response('Invalid argument', { status: 404 })
