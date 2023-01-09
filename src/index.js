@@ -30,8 +30,12 @@ async function handleRequest(request) {
         return new Response(request.statusText(), { status: request.status, headers: cors })
       }
       const output = await request.json()
-      await NAMESPACE.put(signature, JSON.stringify(output))
-      console.log(`cache miss and populated ${signature}`)
+      if (output.count !== 0) {
+        await NAMESPACE.put(signature, JSON.stringify(output))
+        console.log(`cache miss and populated ${signature}`)
+      } else {
+        console.log(`cache miss and ignored (count == 0) ${signature}`)
+      }
       return new Response(JSON.stringify(output), {
         headers: { 'content-type': 'application/json', ...cors },
       })
