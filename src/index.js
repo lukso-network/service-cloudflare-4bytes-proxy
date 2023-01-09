@@ -17,6 +17,9 @@ async function handleRequest(request) {
   if (!signature) {
     return new Response('Missing signature', { status: 404, headers: cors })
   }
+  if (!/(0x)?[0-9]{8}/.test(signature)) {
+    return new Response('Invalid request', { status: 500, headers: cors })
+  }
   const value = await NAMESPACE.get(signature, { type: 'json' })
   if (value === null) {
     try {
