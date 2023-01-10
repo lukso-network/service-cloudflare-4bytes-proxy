@@ -2,12 +2,17 @@ name = "dawn-band-b9c5"
 main = "src/index.js"
 compatibility_date = "2023-01-06"
 usage_model = "bundled"
-env = { }
+
+kv_namespaces = [
+    { binding = "NAMESPACE", id = "20eb836d59744dd995ce4686e4b8f001", preview_id = "3cd38e4fff554584b86fc9007d5fe292" }
+]
+
+[env.production]
+vars = { ENVIRONMENT = "production" }
+name = "service-cloudflare-4bytes-proxy"
+kv_namespaces = [
+    { binding = "NAMESPACE", id = "20eb836d59744dd995ce4686e4b8f001" }
+]
 
 [triggers]
 crons = [ ]
-
-[[kv_namespaces]]
-id = "20eb836d59744dd995ce4686e4b8f001"
-preview_id = "3cd38e4fff554584b86fc9007d5fe292"
-binding = "NAMESPACE"
