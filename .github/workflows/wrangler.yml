@@ -11,8 +11,6 @@ jobs:
     name: Deploy
     steps:
       - uses: actions/checkout@v3
-      - name: Install
-        run: yarn
       - name: Publish
         uses: cloudflare/wrangler-action@2.0.0
         with:
