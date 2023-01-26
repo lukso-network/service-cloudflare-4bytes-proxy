@@ -11,9 +11,14 @@ jobs:
     name: Deploy
     steps:
       - uses: actions/checkout@v3
-      - name: Publish
-        uses: cloudflare/wrangler-action@2.0.0
+      - uses: actions/setup-node@v3
         with:
-          apiToken: ${{ secrets.CF_API_TOKEN }}
-          email: ${{ secrets.CF_EMAIL }}
-          command: publish --env production
+          node-version: "18.12.1"
+          cache: "yarn"
+      - name: Install
+        run: yarn
+      - name: Publish
+        env:
+          CF_EMAIL: ${{ secrets.CF_EMAIL }}
+          CF_API_KEY: ${{ secrets.CF_API_TOKEN }}
+        run: yarn wrangler publish --env production
