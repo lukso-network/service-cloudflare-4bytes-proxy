@@ -13,6 +13,9 @@ name = "service-cloudflare-4bytes-proxy"
 kv_namespaces = [
     { binding = "NAMESPACE", id = "4e3c5989d8ac4c68a90d095edd770b15" }
 ]
+routes = [
+	{ pattern = "4bytesdictionary.universalprofile.cloud", custom_domain = true },
+]
 
 [triggers]
 crons = [ ]
