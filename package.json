@@ -1,8 +1,9 @@
 {
-  "name": "dawn-band-b9c5",
+  "name": "service-cloudflare-4bytes-proxy",
+  "packageManager": "yarn@3.3.1",
   "version": "0.0.0",
   "devDependencies": {
-    "wrangler": "2.6.2"
+    "wrangler": "2.8.1"
   },
   "private": true,
   "scripts": {
