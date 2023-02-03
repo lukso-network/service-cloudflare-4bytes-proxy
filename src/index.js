@@ -27,7 +27,7 @@ async function handleRequest(request) {
         `https://www.4byte.directory/api/v1/signatures/?hex_signature=${signature}`
       );
       if (request.status != 200) {
-        return new Response(request.statusText(), {
+        return new Response(request.statusText, {
           status: request.status,
           headers: cors,
         });
