@@ -24,7 +24,7 @@ async function handleRequest(request) {
   if (value === null) {
     try {
       const request = await fetch(
-        `https://www.4byte.directory/api/v1/signatures/?hex_signature=${signature}`
+        `https://www.4byte.directory/api/v1/signatures/?format=json&hex_signature=${signature}`
       );
       if (request.status != 200) {
         return new Response(request.statusText, {
